@@ -8,7 +8,7 @@ let level = 0;
 
 let h2 = document.querySelector("h2")
 
-document.addEventListener("keypress", function(){  
+document.addEventListener("click", function(){  
     if(started == false){
         console.log("Game started");
         started = true;
@@ -52,7 +52,7 @@ function checkAns(idx){
     }
 
     else{
-        h2.innerHTML = `Game over! Your score was <b>${level}</b>, Press any key to start`;
+        h2.innerHTML = `Game over! Your score was <b>${level}</b>, Press anywhere to start`;
         document.querySelector("body").style.backgroundColor = "red"
         setTimeout(function(){
             document.querySelector("body").style.backgroundColor = "white";
@@ -64,7 +64,8 @@ function checkAns(idx){
         setTimeout(function() {
             document.querySelector("body").style.backgroundColor = "white";
         }, 450);
-        reset();
+
+        setTimeout(reset, 1000);
     }
 
     }
@@ -73,7 +74,6 @@ function btnPress() {
     if(!started){
         return;
     }
-    
     let btn = this;
     userflash(btn);
 
