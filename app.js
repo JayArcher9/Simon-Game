@@ -70,6 +70,10 @@ function checkAns(idx){
     }
 
 function btnPress() {
+    if(!started){
+        return;
+    }
+    
     let btn = this;
     userflash(btn);
 
